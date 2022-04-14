@@ -1,15 +1,24 @@
 
+// Function pointers
+
 #include<stdio.h>
 
+
+int add(int a, int b) {return a+b;}
+int mul(int a, int b) {return a*b;}
+
+void exec(int (*fun)(int, int)){
+    printf("The result is %d\n", fun(5,7));
+}
+
 int main(){
-    char *months[] = {"January", "February", "March"};
     
-    printf("Content of months[0] = %p\n", months[0]);
-    printf("Content of months[1] = %p\n", months[1]);
-    printf("Content of months[2] = %p\n", months[2]);
+    int (*func_pt) (int, int);
+    func_pt = &add;
     
-    printf("Data pointed by months[0], months[1], months[2] = %s, %s, %s\n", 
-           months[0], months[1], months[2]);
+    printf("The result is %d\n", func_pt(5,7));
     
+    exec(add);
+    exec(mul);
     return 0;
 }

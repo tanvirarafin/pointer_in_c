@@ -1,12 +1,14 @@
 
 #include<stdio.h>
 
-int main(int argc, char* argv[]){
-            
-            printf("Total number of arguments = %d\n", argc);
-            
-            while(--argc > 0)
-                printf("%s%s", *++argv, (argc > 1)? " " :"");
+void increment(int *i){
+    (*i) = (*i) + 1;
+}
+
+int main(){
+    int  i = 10;
+    increment(&i);
+    printf("i = %d\n",i);
     
-            return 0;
+    return 0;
 }

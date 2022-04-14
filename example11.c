@@ -1,14 +1,15 @@
 
 #include<stdio.h>
 
-void increment(int i){
-    i = i+1;
-}
-
 int main(){
-    int  i = 10;
-    increment(i);
-    printf("i = %d\n",i);
-    
+    int  a[5] = {3, 6, 9, 12, 15}; 
+    int  *pa; int  *qa;
+
+    pa = &a[0];
+    qa = &a[2];
+
+    printf(" qa-pa = %ld\n", qa-pa);
+    printf(" qa>=pa? = %d\n", qa >= pa);
+    printf(" qa==0? = %d\n", qa == 0);
     return 0;
 }
